@@ -41,6 +41,7 @@ const CardSlice = createSlice({
   extraRedusers: {
     [fetchRandomUser.pending]: (state) => {
       state.status = "Loading";
+      console.log(state.status);
     },
     [fetchRandomUser.fulfilled]: (state, action) => {
       state.status = "success";

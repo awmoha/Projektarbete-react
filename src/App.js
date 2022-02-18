@@ -2,6 +2,7 @@ import style from "./style.css";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AddCard from "./pages/AddCard";
+
 function App() {
   return (
     <div className="App">
