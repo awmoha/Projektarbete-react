@@ -11,17 +11,21 @@ export const fetchRandomUser = createAsyncThunk(
 const CardSlice = createSlice({
   name: "card",
   initialState: {
+    activeObject: null,
+    loading: false,
+    error: false,
+    cardList: [],
     infoCard: [
       {
         id: 1,
         cardName: "",
-        endor: "",
-        cardNumber: "",
-        cardMonth: "",
-        cardYear: "",
-        bankName: "",
-        status : null,
-        cardsStateActiv: false,
+        Vendor: "",
+        cardNumber: "11111111",
+        cardMonth: "22",
+        cardYear: "22",
+        bankName: "Visa",
+        status: null,
+        cardStateActive: false,
       },
     ],
 
@@ -35,21 +39,20 @@ const CardSlice = createSlice({
     },
   },
   extraRedusers: {
-    [fetchRandomUser.pending] :(state) =>{
-      state.status = "Loading"
+    [fetchRandomUser.pending]: (state) => {
+      state.status = "Loading";
     },
-    [fetchRandomUser.fulfilled]:(state, action) =>{
+    [fetchRandomUser.fulfilled]: (state, action) => {
       state.status = "success";
-      const {first, last} = action.payload.name;
+      const { first, last } = action.payload.name;
       let allName = first + " " + last;
-      for ( let i = 0; i < state.infoCard.length; i++){
+      for (let i = 0; i < state.infoCard.length; i++) {
         state.infoCard[i].cardName = allName.toUpperCase();
       }
     },
-    [fetchRandomUser.rejected]:(state) =>{
+    [fetchRandomUser.rejected]: (state) => {
       state.status = "rejected";
-      
-    }
+    },
   },
 });
 export const { addNewCard } = CardSlice.actions;

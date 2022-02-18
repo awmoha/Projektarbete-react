@@ -1,19 +1,32 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+function Card() {
+  const creditCard = useSelector((state) => state.cardInfo);
+  const [state, setState] = useState(creditCard);
+  const toggleActive = (index) => {
+    setState({ ...state, activeObject: state.infoCard[index] });
+  };
 
-function Card({card}) {
+  const activeCard = state.infoCard[state.activeObject];
+
+  const inactiveCards = state.infoCard.filter((c, index) => {
+    return state.activeObject !== index;
+  });
+
+  const allCards = [activeCard, ...inactiveCards].filter(Boolean);
+  const toggleActiveStyle = (index) => {
+    if (state.infoCard[index] === state.activeObject) {
+      return "active";
+    } else {
+      return "inactive";
+    }
+  };
   return (
-    <div>
-        <h2>Info Card</h2>
-        <div className='card_div'>
-            <p>{card.name}</p>
-            <p>{card.endor}</p>
-            <p>{card.cardNumber}</p>
-            <p>{card.cardMonth}</p>
-            <p>{card.cardYear}</p>
-            <p>{card.bankName}</p>
-        </div>
+    <div className="card_div">
+     
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;
