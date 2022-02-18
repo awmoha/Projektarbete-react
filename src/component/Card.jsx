@@ -16,8 +16,8 @@ function Card() {
   
 
   const allCards = [activeCard, ...inactiveCards].filter(Boolean);
-  // console.log("inactive", inactiveCards);
-  // console.log("active", activeCard, state.activeObject);
+  console.log("inactive", inactiveCards);
+  console.log("active", activeCard, state.activeObject);
   const toggleActiveStyle = (index) => {
     if (state.infoCard[index] === state.activeObject) {
       return "active";

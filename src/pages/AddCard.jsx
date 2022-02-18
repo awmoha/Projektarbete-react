@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { addNewCard } from "../redux/CardSlice";
+import { addNewCard } from "../redux/cardSlice";
 const cardData = {
   cardName: "",
   cardNumber: "",

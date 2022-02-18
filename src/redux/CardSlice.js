@@ -8,37 +8,34 @@ export const fetchRandomUser = createAsyncThunk(
       .then((data) => data.results[0]);
   }
 );
-const CardSlice = createSlice({
+
+const initialState = {
+  activeObject: null,
+  loading: false,
+  error: false,
+  cardList: [],
+  infoCard: [
+    {
+      id: 1,
+      cardName: "",
+      cardNumber: "11111111",
+      cardMonth: "22",
+      cardYear: "22",
+      bankName: "Visa",
+      status: null,
+      cardStateActive: false,
+    },
+  ],
+};
+const cardSlice = createSlice({
   name: "card",
-  initialState: {
-    activeObject: null,
-    loading: false,
-    error: false,
-    cardList: [],
-    infoCard: [
-      {
-        id: 1,
-        cardName: "",
-        Vendor: "",
-        cardNumber: "11111111",
-        cardMonth: "22",
-        cardYear: "22",
-        bankName: "Visa",
-        status: null,
-        cardStateActive: false,
-      },
-    ],
-
-    lateId: 1,
-  },
-
+  initialState,
   reducers: {
     addNewCard: (state, action) => {
-      state.infoCard.push(action.payload);
-      state.lateId += 1;
+      state.infoCard = state.infoCard.concat(action.payload);
     },
   },
-  extraRedusers: {
+  extraReducers: {
     [fetchRandomUser.pending]: (state) => {
       state.status = "Loading";
       console.log(state.status);
@@ -50,11 +47,15 @@ const CardSlice = createSlice({
       for (let i = 0; i < state.infoCard.length; i++) {
         state.infoCard[i].cardName = allName.toUpperCase();
       }
+      console.log(state.status);
+
     },
     [fetchRandomUser.rejected]: (state) => {
       state.status = "rejected";
+      console.log(state.status);
+
     },
   },
 });
-export const { addNewCard } = CardSlice.actions;
-export default CardSlice.reducer;
+export const { addNewCard } = cardSlice.actions;
+export default cardSlice.reducer;
