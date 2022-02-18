@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const cardData = {
   cardName: "",
-  cardnumber: "",
+  cardNumber: "",
   cardMonth: "",
   cardYear: "",
   ccv: "",
@@ -24,38 +24,94 @@ export const AddCard = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
+  };
 
   return (
-    <div className="label_card">
-      <h2>Add Card</h2>
-      <label>
-        <input type="" id="" placeholder="Name" />
-      </label>
-      <label>
-        <input type="" id="" placeholder="XXXX XXXX XXXX XXXX" />
-      </label>
-      <label>
-        <input type="" id="" placeholder="Year" />
-      </label>
-      <label>
-        <input type="" id="" placeholder=" Month" />
-      </label>
-      <label>
-        <input type="" id="" placeholder="CCV" />
-      </label>
-      <label htmlFor="cardNumber">Vendor</label>
-      <select id="americanExpress">
-        <option value="American express" id="americanExpress">
-          American express
-        </option>
-        <option id="visa">Visa</option>
-        <option id="mastercard">Mastercard</option>
-      </select>
+    <div>
+      <small>NEW CARD</small>
+
+      <div className="credit-card">
+        <div className="credit-card__logo">{values.bankName}</div>
+
+        <div className="credit-card__number">{values.cardNumber}</div>
+        <span className="credit-ccv">{values.ccv}</span>
+        <div className="credit-card__info">
+          <div className="credit-card__info_name">
+            <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
+            <div value={values.cardName}>{values.cardName}</div>
+          </div>
+
+          <div className="credit-card__info_expiry">
+            <div className="credit-card__info_label">VALID UP TO</div>
+            <div>
+              {" "}
+              {values.cardMonth} / {values.cardYear}
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
-        <Link to="/">
-          <button>Go Back</button>
-        </Link>
+        <form className="label_card" onSubmit={handleSubmit}>
+          <h2>Add Card</h2>
+          <label>
+            <input
+              type="text"
+              name="cardName"
+              value={values.cardName}
+              onChange={handleChange}
+              placeholder="Name"
+            />
+          </label>
+          <label>
+            <input
+              type="number"
+              name="cardNumber"
+              maxLength="16"
+              onChange={handleChange}
+              placeholder="XXXX XXXX XXXX XXXX"
+            />
+          </label>
+          <strong> Expiration Date</strong>
+          <label>
+            <input
+              type="number"
+              name="cardYear"
+              maxLength="2"
+              onChange={handleChange}
+              placeholder="Year"
+            />
+          </label>
+          <label>
+            <input
+              type="number"
+              name="cardMonth"
+              maxLength="2"
+              onChange={handleChange}
+              placeholder=" Month"
+            />
+          </label>
+          <label>
+            <input
+              type="number"
+              name="ccv"
+              maxLength="3"
+              onChange={handleChange}
+              placeholder="CCV"
+            />
+          </label>
+          <label htmlFor="">Vendor</label>
+          <select name="bankName" onChange={handleChange}>
+            <option value="American express">American express</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+          </select>
+          <div>
+            <button>Submit</button>
+            <Link to="/">
+              <button>Go Back</button>
+            </Link>
+          </div>
+        </form>
       </div>
     </div>
   );
