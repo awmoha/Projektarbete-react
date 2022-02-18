@@ -8,8 +8,7 @@ function App() {
       <header className="App-header">
         <Switch>
           <Route exact path="/" render={() => <Home />}></Route>
-          <Route  path="/addCard" render={() => <AddCard />}></Route>
-
+          <Route path="/addCard" render={() => <AddCard />}></Route>
         </Switch>
       </header>
     </div>

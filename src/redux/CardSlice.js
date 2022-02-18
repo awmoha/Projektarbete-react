@@ -14,19 +14,17 @@ const CardSlice = createSlice({
         cardsStateActiv: false,
       },
     ],
-    notActiveCards: [
-      {
-        isUsed: false,
-      },
-    ],
+    
+    lateId: 1,
+  },
+  
 
     reducers: {
-      showCard: (state) => {
-        state.infoCard = state.infoCard
+      addNewCard: (state, action) => {
+        state.infoCard.push(action.payload);
+        state.lateId +=1;
       },
-
-    },
   },
 });
-export const { showCard } = CardSlice.actions;
+export const { addNewCard } = CardSlice.actions;
 export default CardSlice.reducer;

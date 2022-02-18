@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-
+import { addNewCard } from "../redux/CardSlice";
 const cardData = {
   cardName: "",
   cardNumber: "",
@@ -24,6 +24,13 @@ export const AddCard = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (creditCard.infoCard.length <= 3) {
+      dispatch(addNewCard(values));
+      setValues(cardData);
+      console.log(creditCard.infoCard);
+    } else {
+      alert("Max limit");
+    }
   };
 
   return (
@@ -34,12 +41,11 @@ export const AddCard = () => {
         <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
         <div value={values.cardName}>{values.cardName}</div>
         <form className="credit-card__VALID">
-        <div >
-          M/Y {values.cardMonth} / {values.cardYear}
-        </div>
+          <div>
+            M/Y {values.cardMonth} / {values.cardYear}
+          </div>
         </form>
         <div className="credit-ccv"> CVG {values.ccv}</div>
-
       </div>
 
       <div>
