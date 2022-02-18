@@ -14,12 +14,13 @@ const CardSlice = createSlice({
     infoCard: [
       {
         id: 1,
-        name: "",
+        cardName: "",
         endor: "",
         cardNumber: "",
         cardMonth: "",
         cardYear: "",
         bankName: "",
+        status: null,
         cardsStateActiv: false,
       },
     ],
@@ -32,7 +33,17 @@ const CardSlice = createSlice({
       state.infoCard.push(action.payload);
       state.lateId += 1;
     },
-    extraRedusers:{}
+  },
+  extraRedusers: {
+    [fetchRandomUser.pending]: (state) => {
+      state.status = "Loading";
+    },
+    [fetchRandomUser.fulfilled]: (state, action) => {
+      state.status = "success";
+    },
+    [fetchRandomUser.rejected]: (state) => {
+      state.status = "rejected";
+    },
   },
 });
 export const { addNewCard } = CardSlice.actions;
