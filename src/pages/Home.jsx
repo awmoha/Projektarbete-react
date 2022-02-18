@@ -6,8 +6,8 @@ function Home() {
     <div>
       <h2>Home</h2>
       <CardInfo/>
-      <Link to="/addCard">
-        <button>Add Cards</button>
+      <Link to="/">
+        <button>Go Back</button>
       </Link>
     </div>
   );
