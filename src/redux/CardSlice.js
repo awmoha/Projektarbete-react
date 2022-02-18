@@ -21,10 +21,12 @@ const CardSlice = createSlice({
     ],
 
     reducers: {
-      
+      showCard: (state) => {
+        state.infoCard = state.infoCard
+      },
 
     },
   },
 });
-export const {  } = CardSlice.actions;
+export const { showCard } = CardSlice.actions;
 export default CardSlice.reducer;
