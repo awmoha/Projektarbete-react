@@ -20,7 +20,7 @@ const CardSlice = createSlice({
         cardMonth: "",
         cardYear: "",
         bankName: "",
-        status: null,
+        status : null,
         cardsStateActiv: false,
       },
     ],
@@ -35,15 +35,21 @@ const CardSlice = createSlice({
     },
   },
   extraRedusers: {
-    [fetchRandomUser.pending]: (state) => {
-      state.status = "Loading";
+    [fetchRandomUser.pending] :(state) =>{
+      state.status = "Loading"
     },
-    [fetchRandomUser.fulfilled]: (state, action) => {
+    [fetchRandomUser.fulfilled]:(state, action) =>{
       state.status = "success";
+      const {first, last} = action.payload.name;
+      let allName = first + " " + last;
+      for ( let i = 0; i < state.infoCard.length; i++){
+        state.infoCard[i].cardName = allName.toUpperCase();
+      }
     },
-    [fetchRandomUser.rejected]: (state) => {
+    [fetchRandomUser.rejected]:(state) =>{
       state.status = "rejected";
-    },
+      
+    }
   },
 });
 export const { addNewCard } = CardSlice.actions;
