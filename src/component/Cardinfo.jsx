@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AddCards() {
+function CardInfo() {
   return (
     <div>Add.card</div>
   )
 }
 
-export default AddCards
+export default CardInfo
