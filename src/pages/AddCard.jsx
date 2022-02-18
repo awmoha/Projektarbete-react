@@ -35,6 +35,7 @@ export const AddCard = () => {
 
   return (
     <div>
+      <small>New Card</small>
       <div className="card_div">
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
@@ -47,7 +48,7 @@ export const AddCard = () => {
         </form>
         <div className="credit-ccv"> CVG {values.ccv}</div>
       </div>
-
+      {/* Credit card form */}
       <div>
         <form className="label_card" onSubmit={handleSubmit}>
           <h2>Add Card</h2>
@@ -55,24 +56,25 @@ export const AddCard = () => {
             <input
               type="text"
               name="cardName"
-              value={values.cardName}
+              value={values.cardName || ""}
               onChange={handleChange}
               placeholder="Name"
             />
           </label>
           <label>
             <input
-              type="number"
+              type="text"
               name="cardNumber"
               maxLength="16"
               onChange={handleChange}
               placeholder="XXXX XXXX XXXX XXXX"
+              
             />
           </label>
           <strong> Expiration Date</strong>
           <label>
             <input
-              type="number"
+              type="text"
               name="cardYear"
               maxLength="2"
               onChange={handleChange}
@@ -81,7 +83,7 @@ export const AddCard = () => {
           </label>
           <label>
             <input
-              type="number"
+              type="text"
               name="cardMonth"
               maxLength="2"
               onChange={handleChange}
@@ -90,7 +92,7 @@ export const AddCard = () => {
           </label>
           <label>
             <input
-              type="number"
+              type="text"
               name="ccv"
               maxLength="3"
               onChange={handleChange}
