@@ -21,11 +21,10 @@ const CardSlice = createSlice({
     ],
 
     reducers: {
-      card: (state, action) => {
-        state.infoCard.push(action.payload);
-      },
+      
+
     },
   },
 });
-export const { card } = CardSlice.actions;
+export const {  } = CardSlice.actions;
 export default CardSlice.reducer;

@@ -1,9 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Card from "./Card"
 function CardInfo() {
   return (
-    <div>Add.card</div>
-  )
+    <div>
+      <h2>Card Info</h2>
+    
+    </div>
+  );
 }
 
-export default CardInfo
+export default CardInfo;
