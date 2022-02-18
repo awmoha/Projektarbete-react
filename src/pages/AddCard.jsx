@@ -75,7 +75,6 @@ export const AddCard = () => {
               
             />
           </label>
-          <strong> Expiration Date</strong>
           <label>
             <input
               type="text"
