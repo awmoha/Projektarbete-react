@@ -1,6 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+
+const cardData = {
+  cardName: "",
+  cardnumber: "",
+  cardMonth: "",
+  cardYear: "",
+  ccv: "",
+  bankName: "",
+};
 export const AddCard = () => {
+  const creditCard = useSelector((state) => state.cardInfo);
+  const dispatch = useDispatch();
+  const [values, setValues] = useState(cardData);
+  const handleChange = (e) => {
+    const nextCard = {
+      ...values,
+      [e.target.name]: e.target.value,
+    };
+    setValues(nextCard);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="label_card">
       <h2>Add Card</h2>

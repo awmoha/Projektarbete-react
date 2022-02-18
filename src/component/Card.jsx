@@ -11,7 +11,6 @@ function Card({card}) {
             <p>{card.cardMonth}</p>
             <p>{card.cardYear}</p>
             <p>{card.bankName}</p>
-
         </div>
     </div>
   )
