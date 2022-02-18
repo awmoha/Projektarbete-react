@@ -8,8 +8,8 @@ import { useDispatch } from "react-redux";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchRandomUser())
-  }, [dispatch])
+    dispatch(fetchRandomUser());
+  }, [dispatch]);
   return (
     <div className="App">
       <header className="App-header">
