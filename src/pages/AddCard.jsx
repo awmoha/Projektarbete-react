@@ -28,28 +28,20 @@ export const AddCard = () => {
 
   return (
     <div>
-      <small>NEW CARD</small>
-
-      <div className="credit-card">
+      <div className="card_div">
         <div className="credit-card__logo">{values.bankName}</div>
-
         <div className="credit-card__number">{values.cardNumber}</div>
-        <span className="credit-ccv">{values.ccv}</span>
-        <div className="credit-card__info">
-          <div className="credit-card__info_name">
-            <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
-            <div value={values.cardName}>{values.cardName}</div>
-          </div>
-
-          <div className="credit-card__info_expiry">
-            <div className="credit-card__info_label">VALID UP TO</div>
-            <div>
-              {" "}
-              {values.cardMonth} / {values.cardYear}
-            </div>
-          </div>
+        <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
+        <div value={values.cardName}>{values.cardName}</div>
+        <form className="credit-card__VALID">
+        <div >
+          M/Y {values.cardMonth} / {values.cardYear}
         </div>
+        </form>
+        <div className="credit-ccv"> CVG {values.ccv}</div>
+
       </div>
+
       <div>
         <form className="label_card" onSubmit={handleSubmit}>
           <h2>Add Card</h2>
