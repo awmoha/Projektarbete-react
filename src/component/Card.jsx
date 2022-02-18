@@ -24,7 +24,28 @@ function Card() {
   };
   return (
     <div className="card_div">
-     
+      {allCards.map((credit, index) => {
+        return (
+          <div
+            key={index}
+            className={toggleActiveStyle(index)}
+            onClick={() => {
+              toggleActive(index);
+            }}
+          >
+            <div className="credit-card__logo">{credit.bankName}</div>
+            <div className="credit-card__number">{credit.cardNumber}</div>
+            <span className="credit-ccv">{credit.ccv}</span>
+            <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
+            <div value={credit.cardName}>{credit.cardName}</div>
+            <div className="credit-card__info_label">VALID UP TO</div>
+            <div>
+              {" "}
+              {credit.cardMonth} / {credit.cardYear}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
