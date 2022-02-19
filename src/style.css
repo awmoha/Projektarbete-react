@@ -19,8 +19,9 @@ body {
 }
 
 .card {
+  background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
+    no-repeat center center;
   margin-top: 20px;
-  margin-left: 100px;
   width: 320px;
   height: 190px;
   border-radius: 10px;
@@ -30,12 +31,12 @@ body {
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
   perspective: 600px;
-  margin-bottom: 20px;
+  display: grid;
 }
-.card_part {
+.card_orginal {
+  display: grid;
   box-shadow: 1px 1px #aaa3a3;
-  margin-top: 20px;
-  display: inline-block;
+  margin-top: 0px;
   background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
     no-repeat center center;
   width: 320px;
@@ -67,10 +68,13 @@ body {
   font-size: 35px;
 }
 .credit-card__info_label {
+  display: grid;
+  margin-top: 40px;
+  justify-items: right;
   font-size: 10px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 1px;
+  color: white;
+  letter-spacing: 4px;
 }
 .chip {
   width: 30px;

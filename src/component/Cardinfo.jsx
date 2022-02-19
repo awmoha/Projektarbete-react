@@ -2,7 +2,7 @@ import Card from "./Card";
 
 const CardInfo = () => {
   return (
-    <div>
+    <div >
       <Card />
     </div>
   );

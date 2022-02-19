@@ -23,9 +23,12 @@ const initialState = {
       cardYear: "22",
       bankName: "Visa",
       status: null,
-      cardStateActive: false,
+      isActive: false,
     },
   ],
+  notActiveCards: [{
+    isUsed: false,
+  }]
 };
 const cardSlice = createSlice({
   name: "card",
