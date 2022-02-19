@@ -37,6 +37,15 @@ const cardSlice = createSlice({
     addNewCard: (state, action) => {
       state.infoCard = state.infoCard.concat(action.payload);
     },
+    addActiveCard: (state, action) => {
+      //push to notActive array from cards array
+      state.notActiveCards = [...state.infoCard, action.payload]
+      state.infoCard.pop();
+      //push to cards array from input
+      state.infoCard = [...state.infoCard, action.payload]
+      state.notActiveCards.pop();
+  
+     }
   },
   extraReducers: {
     [fetchRandomUser.pending]: (state) => {
