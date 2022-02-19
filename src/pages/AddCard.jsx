@@ -36,7 +36,7 @@ export const AddCard = () => {
   return (
     <div>
       <small>New Card</small>
-      <div className="card_div">
+      <div className="card">
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
         <div className="credit-card__info_label">CARDHOLDER'S NAME</div>

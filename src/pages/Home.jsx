@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CardInfo from "../component/Cardinfo";
+import AddCard from "./AddCard";
 function Home() {
   return (
-    <div>
+    <div className="home__div">
       <h2>Home</h2>
-      <CardInfo/>
       <Link to="/">
         <button>Go Back</button>
       </Link>
+      <CardInfo />
     </div>
   );
 }
