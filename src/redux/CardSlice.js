@@ -18,7 +18,7 @@ const initialState = {
     {
       id: 1,
       cardName: "",
-      cardNumber: "11111111",
+      cardNumber: "1111 1111 1111 1111",
       cardMonth: "22",
       cardYear: "22",
       bankName: "Visa",
