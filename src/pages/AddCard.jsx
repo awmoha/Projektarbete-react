@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { addNewCard } from "../redux/cardSlice";
+import { addNewCard, addActiveCard } from "../redux/cardSlice";
 const cardData = {
   cardName: "",
   cardNumber: "",
@@ -10,7 +10,9 @@ const cardData = {
   cardYear: "",
   ccv: "",
   bankName: "",
+  id: ""
 };
+
 export const AddCard = () => {
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
@@ -21,12 +23,15 @@ export const AddCard = () => {
       [e.target.name]: e.target.value,
     };
     setValues(nextCard);
+
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
       setValues(cardData);
+
       console.log(creditCard.infoCard);
     } else {
       alert("Max limit");
@@ -37,6 +42,7 @@ export const AddCard = () => {
     <div className="add_card">
       <small>New Card</small>
       <div>
+      <div className="credit-card__logo">{values.id}</div>
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
         <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
@@ -56,6 +62,15 @@ export const AddCard = () => {
       <div>
         <form className="label_card" onSubmit={handleSubmit}>
           <h2>Add Card</h2>
+          <label>
+            <input
+              type="text"
+              name="id"
+              value={values.id}
+              onChange={handleChange}
+              placeholder="id"
+            />
+          </label>
           <label>
             <input
               type="text"

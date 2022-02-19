@@ -23,12 +23,14 @@ const initialState = {
       cardYear: "22",
       bankName: "Visa",
       status: null,
-      isActive: false,
+      isActive: true,
     },
   ],
-  notActiveCards: [{
-    isUsed: false,
-  }]
+  notActiveCards: [
+    {
+      isUsed: false,
+    },
+  ],
 };
 const cardSlice = createSlice({
   name: "card",
@@ -39,13 +41,18 @@ const cardSlice = createSlice({
     },
     addActiveCard: (state, action) => {
       //push to notActive array from cards array
-      state.notActiveCards = [...state.infoCard, action.payload]
-      state.infoCard.pop();
+      state.notActiveCards = [...state.infoCard, action.payload];
+      state.infoCard.push();
+
       //push to cards array from input
-      state.infoCard = [...state.infoCard, action.payload]
-      state.notActiveCards.pop();
-  
-     }
+      state.infoCard = [...state.infoCard, action.payload];
+      state.notActiveCards.push();
+    },
+    deletItem: (state, action) => {
+      state.infoCard = state.infoCard.filter(
+        (item) => item.id !== action.payload
+      );
+    },
   },
   extraReducers: {
     [fetchRandomUser.pending]: (state) => {
@@ -60,14 +67,12 @@ const cardSlice = createSlice({
         state.infoCard[i].cardName = allName.toUpperCase();
       }
       console.log(state.status);
-
     },
     [fetchRandomUser.rejected]: (state) => {
       state.status = "rejected";
       console.log(state.status);
-
     },
   },
 });
-export const { addNewCard } = cardSlice.actions;
+export const { addNewCard, addActiveCard, deletItem } = cardSlice.actions;
 export default cardSlice.reducer;
