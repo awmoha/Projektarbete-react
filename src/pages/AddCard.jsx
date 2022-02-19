@@ -41,7 +41,7 @@ export const AddCard = () => {
   return (
     <div className="add_card">
       <small>New Card</small>
-      <div>
+      <div className="">
       <div className="credit-card__logo">{values.id}</div>
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
