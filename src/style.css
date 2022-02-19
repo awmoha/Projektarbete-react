@@ -4,7 +4,23 @@ body {
 .App {
   text-align: center;
 }
-
+.btn---app {
+  display: flex;
+  
+}
+.btn_app{
+  padding: 0.55em 1.5em;
+  border: 0.1em solid #0c0b0b;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  font-family: "Times New Roman", Times, serif;
+  color: #1a1717;
+  transition: all 0.2s;
+}
+.btn_app:hover {
+  color: #000000;
+  background-color: #685e96;
+}
 .App-header {
   min-height: 100vh;
   display: flex;

@@ -14,13 +14,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Router>
-          <Link to="/home">
-            <button>Home</button>
-          </Link>
-          <Link to="/addCard">
-            <button>Add Card</button>
-          </Link>
-
+          <div className="btn---app">
+            <Link to="/home">
+              <button className="btn_app">Home</button>
+            </Link>
+            <Link to="/addCard">
+              <button className="btn_app">Add Card</button>
+            </Link>
+          </div>
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/addcard" component={AddCard} />
