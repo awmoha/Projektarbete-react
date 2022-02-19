@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {deletItem} from "../redux/cardSlice"
+import {deletCard} from "../redux/cardSlice"
 function Card({ credit }) {
   const dispatch = useDispatch();
   const handleDeleteTodo = (id) => {
-    dispatch(deletItem(id));
+    dispatch(deletCard(id));
   };
   return (
     <div className="card">
