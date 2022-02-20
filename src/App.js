@@ -4,12 +4,13 @@ import Home from "./pages/Home";
 import AddCard from "./pages/AddCard";
 import { fetchRandomUser } from "./redux/cardSlice";
 import { useEffect } from "react";
-import { useDispatch , useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRandomUser());
   }, [dispatch]);
+  //jag skrev dispatch här för att när man klickar på Home knapp, inte ändrar namnet
   const { infoCard } = useSelector((state) => state.cardInfo);
 
   return (
@@ -27,7 +28,10 @@ function App() {
           <Switch>
             <Route path="/home" component={Home} />
             {infoCard.map((credit, i) => (
-              <Route path="/addcard" render={() => <AddCard credit={credit}/>} />
+              <Route
+                path="/addcard"
+                render={() => <AddCard credit={credit} />}
+              />
             ))}
           </Switch>
         </Router>

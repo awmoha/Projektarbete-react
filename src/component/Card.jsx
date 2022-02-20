@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {deletCard} from "../redux/cardSlice"
+import { deletCard } from "../redux/cardSlice";
 function Card({ credit }) {
   const dispatch = useDispatch();
   const handleDeleteTodo = (id) => {
@@ -26,7 +26,13 @@ function Card({ credit }) {
       </div>
       <div>
         {" "}
-        <button onClick={() => {handleDeleteTodo(credit.id)}}>Delete</button>
+        <button
+          onClick={() => {
+            handleDeleteTodo(credit.id);
+          }}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

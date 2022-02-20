@@ -8,7 +8,7 @@ import { fetchRandomUser } from "../redux/cardSlice";
 
 export const AddCard = ({ credit }) => {
   const cardData = {
-    cardName: `${credit.cardName} `,
+    cardName: `${credit.cardName}`,
     cardNumber: "XXXX XXXX XXXX XXXX",
     cardMonth: "",
     cardYear: "",
@@ -52,15 +52,15 @@ export const AddCard = ({ credit }) => {
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
         <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
-        { <div value={values.cardName}>{values.cardName}</div> } 
+        {/* { <div value={credit.cardName}>{credit.cardName}</div> }  */}
         {/* {infoCard.map((credit, i) => (
           <div key={i} className="credit-card__name" value={credit.cardName}>
             {credit.cardName}
           </div>
         ))}  */}
-         {/* <div className="credit-card__name" value={credit.cardName}>
+         { <div className="credit-card__name" value={credit.cardName}>
             {credit.cardName}
-          </div> */}
+          </div> }
         
         <form className="credit-card__VALID">
           <div>
