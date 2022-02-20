@@ -4,12 +4,14 @@ import Home from "./pages/Home";
 import AddCard from "./pages/AddCard";
 import { fetchRandomUser } from "./redux/cardSlice";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRandomUser());
   }, [dispatch]);
+  const { infoCard } = useSelector((state) => state.cardInfo);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +26,9 @@ function App() {
           </div>
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/addcard" component={AddCard} />
+            {infoCard.map((credit, i) => (
+              <Route path="/addcard" render={() => <AddCard credit={credit}/>} />
+            ))}
           </Switch>
         </Router>
       </header>
