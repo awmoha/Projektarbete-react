@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
 import { fetchRandomAddCard } from "../redux/cardSlice";
-//ett alternativ att skapa en samma Api och fixa här kolla med Brandon
+//ett alternativ att skapa en till samma Api och fixa här kolla med Brandon
 export const AddCard = () => {
   const cardData = {
     cardName: ``,
@@ -31,13 +31,13 @@ export const AddCard = () => {
     e.preventDefault();
     if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
+      // dispatch(addActiveCard(values)); om vi byter till detta så det blir rätt men den tar bara två kort
       setValues(cardData);
       console.log(creditCard.infoCard);
     } else {
       alert("Max limit");
     }
   };
-  
 
   return (
     <div className="add_card">

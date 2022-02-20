@@ -47,15 +47,18 @@ const cardSlice = createSlice({
   reducers: {
     addNewCard: (state, action) => {
       state.infoCard = state.infoCard.concat(action.payload);
+      //alternativ 2 
+      // state.infoCard.push(action.payload);
+      // state.latestId += 1;  
     },
     addActiveCard: (state, action) => {
       //push to notActive array from cards array
       state.notActiveCards = [...state.infoCard, action.payload];
-      state.infoCard.push();
+      state.infoCard.pop();
 
       //push to cards array from input
       state.infoCard = [...state.infoCard, action.payload];
-      state.notActiveCards.push();
+      state.notActiveCards.pop();
     },
     deletCard: (state, action) => {
       state.infoCard = state.infoCard.filter(
@@ -79,15 +82,6 @@ const cardSlice = createSlice({
     },
     [fetchRandomUser.rejected]: (state) => {
       state.status = "rejected";
-      console.log(state.status);
-    },
-    [fetchRandomAddCard.fulfilled]: (state, action) => {
-      state.status = "success";
-      const { first, last } = action.payload.name;
-      let allName = first + " " + last;
-      for (let i = 0; i < state.infoCard.length; i++) {
-        state.infoCard[i].cardName = allName.toUpperCase();
-      }
       console.log(state.status);
     },
   },
