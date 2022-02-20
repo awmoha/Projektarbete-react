@@ -1,8 +1,6 @@
 import Card from "./Card";
 import { useSelector } from "react-redux";
 import NotActiveCard from "./NotActiveCard";
-import { Link } from "react-router-dom";
-
 const CardInfo = () => {
   const { infoCard } = useSelector((state) => state.cardInfo);
   const { notActiveCards } = useSelector((state) => state.cardInfo);

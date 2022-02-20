@@ -10,6 +10,7 @@ function App() {
      useEffect(() => {
     dispatch(fetchRandomUser());
    }, [dispatch]);
+   
   //jag skrev dispatch här i app.js för att när man add a new card
   // så ändras inte namnet på alla nya kort ??????
   const { infoCard } = useSelector((state) => state.cardInfo);

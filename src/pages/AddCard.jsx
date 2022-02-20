@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
-import { fetchRandomUser } from "../redux/cardSlice";
-
+import { fetchRandomAddCard } from "../redux/cardSlice";
+//ett alternativ att skapa en samma Api och fixa här kolla med Brandon
 export const AddCard = () => {
   const cardData = {
-    cardName: "",
+    cardName: ``,
     cardNumber: "XXXX XXXX XXXX XXXX",
     cardMonth: "",
     cardYear: "",
@@ -15,7 +15,7 @@ export const AddCard = () => {
     bankName: "",
     id: "",
   };
-  const { cardList } = useSelector((state) => state.cardInfo);
+  const { infoCard } = useSelector((state) => state.cardInfo);
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
   const [values, setValues] = useState(cardData);
@@ -32,7 +32,6 @@ export const AddCard = () => {
     if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
       setValues(cardData);
-
       console.log(creditCard.infoCard);
     } else {
       alert("Max limit");
@@ -48,11 +47,10 @@ export const AddCard = () => {
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
         <div>CARDHOLDER'S NAME</div>
-         { <div value={values.cardName}>{values.cardName}</div> }  
-         {/* { <div className="credit-card__name" value={values.cardName}>
+        {<div value={values.cardName}>{values.cardName}</div>}
+        {/* { <div className="credit-card__name" value={values.cardName}>
             {values.cardName}
           </div> } */}
-        
         <form className="credit-card__VALID">
           <div>
             M/Y {values.cardMonth} / {values.cardYear}
@@ -83,7 +81,6 @@ export const AddCard = () => {
               type="text"
               name="cardName"
               value={values.cardName}
-        
               onChange={handleChange}
               placeholder="Name"
             />
@@ -131,7 +128,7 @@ export const AddCard = () => {
             <option value="mastercard">Mastercard</option>
           </select>
           <div>
-            <button>Submit</button>
+            <button onClick={handleSubmit}>Submit</button>
             <Link to="/home">
               <button>Go Back</button>
             </Link>

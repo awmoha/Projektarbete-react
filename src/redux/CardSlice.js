@@ -8,7 +8,14 @@ export const fetchRandomUser = createAsyncThunk(
       .then((data) => data.results[0]);
   }
 );
-
+export const fetchRandomAddCard = createAsyncThunk(
+  "card/fetchRandomUser",
+  async () => {
+    return fetch(`https://randomuser.me/api/`)
+      .then((response) => response.json())
+      .then((data) => data.results[0]);
+  }
+);
 const initialState = {
   activeObject: null,
   loading: false,
@@ -72,6 +79,15 @@ const cardSlice = createSlice({
     },
     [fetchRandomUser.rejected]: (state) => {
       state.status = "rejected";
+      console.log(state.status);
+    },
+    [fetchRandomAddCard.fulfilled]: (state, action) => {
+      state.status = "success";
+      const { first, last } = action.payload.name;
+      let allName = first + " " + last;
+      for (let i = 0; i < state.infoCard.length; i++) {
+        state.infoCard[i].cardName = allName.toUpperCase();
+      }
       console.log(state.status);
     },
   },
