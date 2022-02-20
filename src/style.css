@@ -6,9 +6,8 @@ body {
 }
 .btn---app {
   display: flex;
-  
 }
-.btn_app{
+button {
   padding: 0.55em 1.5em;
   border: 0.1em solid #0c0b0b;
   margin: 0 0.3em 0.3em 0;
@@ -17,9 +16,14 @@ body {
   color: #1a1717;
   transition: all 0.2s;
 }
-.btn_app:hover {
+button:hover {
   color: #000000;
   background-color: #685e96;
+}
+.submit {
+  border: orange 2px solid;
+  background-color: #282c34;
+  color: #fff;
 }
 .App-header {
   min-height: 100vh;
@@ -34,7 +38,23 @@ body {
   display: grid;
 }
 
-.card  {
+input {
+  margin-top: 12px;
+  font-family: "Times New Roman", Times, serif;
+  border: rgb(4, 5, 3) 2px solid;
+  border-radius: 0.42em;
+}
+
+select {
+  margin: 20px 70px 70px 70px ;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p{
+  font-family: "Times New Roman", Times, serif;
+
+}
+.card {
   background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
     no-repeat center center;
   margin-top: 20px;
@@ -49,7 +69,7 @@ body {
   perspective: 600px;
   display: grid;
 }
-.card_orginal{
+.card_orginal {
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
   margin-top: 0px;
@@ -92,5 +112,7 @@ body {
   letter-spacing: 4px;
 }
 .chip {
+  display: grid;
+  justify-self:center;
   width: 30px;
 }

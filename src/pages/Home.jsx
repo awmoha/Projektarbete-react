@@ -5,9 +5,8 @@ import AddCard from "./AddCard";
 function Home() {
   return (
     <div className="home__div">
-      <h2>Home</h2>
       <Link to="/">
-        <button>Go Back</button>
+        <button>Go back to start</button>
       </Link>
       <CardInfo />
     </div>
