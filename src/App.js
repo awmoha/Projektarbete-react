@@ -7,10 +7,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
+    useEffect(() => {
     dispatch(fetchRandomUser());
-  }, [dispatch]);
-  //jag skrev dispatch här för att när man klickar på Home knapp, inte ändrar namnet
+   }, [dispatch]);
+  //jag skrev dispatch här i app.js för att när man add a new card
+  // så ändras inte namnet på alla nya kort ??????
   const { infoCard } = useSelector((state) => state.cardInfo);
 
   return (
@@ -26,13 +27,15 @@ function App() {
             </Link>
           </div>
           <Switch>
-            <Route path="/home" component={Home} />
-            {infoCard.map((credit, i) => (
+            <Route path="/home" component={Home } />
+            <Route path="/addCard" component={AddCard} />
+
+            {/* {infoCard.map((user, i) => (
               <Route
                 path="/addcard"
-                render={() => <AddCard credit={credit} />}
+                render={() => <AddCard user={user} />}
               />
-            ))}
+            ))} */}
           </Switch>
         </Router>
       </header>

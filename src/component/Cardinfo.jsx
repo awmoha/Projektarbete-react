@@ -15,13 +15,13 @@ const CardInfo = () => {
         
       ))}
     </div>
-    <div>
+    {/* <div>
         <p className='activeCard'>Inactive cards</p>
         {notActiveCards.map((notActiveCard, i) => (
       
           <NotActiveCard key={i} credit={notActiveCard}/>
         ))}
-        </div>
+        </div> */}
     </div>
   );
 };

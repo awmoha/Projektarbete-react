@@ -5,10 +5,9 @@ import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
 import { fetchRandomUser } from "../redux/cardSlice";
 
-
-export const AddCard = ({ credit }) => {
+export const AddCard = () => {
   const cardData = {
-    cardName: `${credit.cardName}`,
+    cardName: "",
     cardNumber: "XXXX XXXX XXXX XXXX",
     cardMonth: "",
     cardYear: "",
@@ -16,8 +15,7 @@ export const AddCard = ({ credit }) => {
     bankName: "",
     id: "",
   };
-  const { infoCard } = useSelector((state) => state.cardInfo);
-
+  const { cardList } = useSelector((state) => state.cardInfo);
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
   const [values, setValues] = useState(cardData);
@@ -40,9 +38,7 @@ export const AddCard = ({ credit }) => {
       alert("Max limit");
     }
   };
-  useEffect(() => {
-    dispatch(fetchRandomUser());
-  }, [dispatch]);
+  
 
   return (
     <div className="add_card">
@@ -51,16 +47,11 @@ export const AddCard = ({ credit }) => {
         <div className="credit-card__logo">{values.id}</div>
         <div className="credit-card__logo">{values.bankName}</div>
         <div className="credit-card__number">{values.cardNumber}</div>
-        <div className="credit-card__info_label">CARDHOLDER'S NAME</div>
-        {/* { <div value={credit.cardName}>{credit.cardName}</div> }  */}
-        {/* {infoCard.map((credit, i) => (
-          <div key={i} className="credit-card__name" value={credit.cardName}>
-            {credit.cardName}
-          </div>
-        ))}  */}
-         { <div className="credit-card__name" value={credit.cardName}>
-            {credit.cardName}
-          </div> }
+        <div>CARDHOLDER'S NAME</div>
+         { <div value={values.cardName}>{values.cardName}</div> }  
+         {/* { <div className="credit-card__name" value={values.cardName}>
+            {values.cardName}
+          </div> } */}
         
         <form className="credit-card__VALID">
           <div>
@@ -91,7 +82,7 @@ export const AddCard = ({ credit }) => {
             <input
               type="text"
               name="cardName"
-              value={credit.cardName}
+              value={values.cardName}
         
               onChange={handleChange}
               placeholder="Name"
@@ -141,7 +132,7 @@ export const AddCard = ({ credit }) => {
           </select>
           <div>
             <button>Submit</button>
-            <Link to="/">
+            <Link to="/home">
               <button>Go Back</button>
             </Link>
           </div>

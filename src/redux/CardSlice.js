@@ -13,11 +13,13 @@ const initialState = {
   activeObject: null,
   loading: false,
   error: false,
-  cardList: [],
+  cardList: [{
+    listName:"fefe"
+  }],
   infoCard: [
     {
       id: 1,
-      cardName: "",
+      cardName: "moha",
       cardNumber: "1111 1111 1111 1111",
       cardMonth: "22",
       cardYear: "22",
