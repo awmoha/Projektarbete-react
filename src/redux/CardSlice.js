@@ -9,11 +9,10 @@ export const fetchRandomUser = createAsyncThunk(
   }
 );
 const initialState = {
-  cardList: [],
   infoCard: [
     {
       id: "1",
-      cardName: "moha",
+      cardName: "Loading",
       cardNumber: "1111 1111 1111 1111",
       cardMonth: "22",
       cardYear: "22",
@@ -38,14 +37,14 @@ const cardSlice = createSlice({
       state.infoCard.unshift(action.payload);
       // state.latestId += 1;
     },
-    addActiveCard: (state, action) => {
-      //push to notActive array from cards array
-      state.notActiveCards = [...state.infoCard, action.payload];
-      state.infoCard.pop();
-      //push to cards array from input
-      state.infoCard = [...state.infoCard, action.payload];
-      state.notActiveCards.pop();
-    },
+    // addActiveCard: (state, action) => {
+    //   //push to notActive array from cards array
+    //   state.notActiveCards = [...state.infoCard, action.payload];
+    //   state.infoCard.pop();
+    //   //push to cards array from input
+    //   state.infoCard = [...state.infoCard, action.payload];
+    //   state.notActiveCards.pop();
+    // },
     deletCard: (state, action) => {
       state.cardList = state.cardList.filter(
         (card) => card.id !== action.payload

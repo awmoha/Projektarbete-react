@@ -5,18 +5,14 @@ import { useState } from "react";
 
 const CardInfo = () => {
   const { infoCard } = useSelector((state) => state.cardInfo);
-  const [pushCard, setPushCard] = useState(infoCard);
-  let changeActiv = () => {
-    infoCard.unshift(pushCard)
-     setPushCard(pushCard)
-  };
-  console.log(changeActiv);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const [show, setShow] = useState(false);
+
   return (
     <div>
-      <div onClick={changeActiv}>
-        <p> Activity Cards</p>
+      <div>
         {infoCard.map((card, i) => (
-          <Card key={i} card={card} />
+          <Card key={i} card={card}/>
         ))}
       </div>
       {/* <div>
@@ -30,3 +26,6 @@ const CardInfo = () => {
 };
 
 export default CardInfo;
+
+   
+// e.stopPropagation();    ett sätt kolla på det 

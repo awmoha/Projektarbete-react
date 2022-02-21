@@ -1,5 +1,5 @@
 import React from "react";
-function Card({ card }) {
+function Card({ card}) {
   return (
     <div>
       <div className="card">
