@@ -8,24 +8,21 @@ export const fetchRandomUser = createAsyncThunk(
       .then((data) => data.results[0]);
   }
 );
-export const fetchRandomAddCard = createAsyncThunk(
-  "card/fetchRandomUser",
-  async () => {
-    return fetch(`https://randomuser.me/api/`)
-      .then((response) => response.json())
-      .then((data) => data.results[0]);
-  }
-);
+// export const fetchRandomAddCard = createAsyncThunk(
+//   "card/fetchRandomUser",
+//   async () => {
+//     return fetch(`https://randomuser.me/api/`)
+//       .then((response) => response.json())
+//       .then((data) => data.results[0]);
+//   }
+// );
 const initialState = {
-  activeObject: null,
-  loading: false,
-  error: false,
   cardList: [{
     isActive: true,
   }],
   infoCard: [
     {
-      id: null,
+      id: "",
       cardName: "moha",
       cardNumber: "1111 1111 1111 1111",
       cardMonth: "22",
@@ -46,16 +43,15 @@ const cardSlice = createSlice({
   initialState,
   reducers: {
     addNewCard: (state, action) => {
-      state.cardList = state.cardList.concat(action.payload);
+      // state.cardList = state.cardList.concat(action.payload);
       //alternativ 2 
-      // state.infoCard.push(action.payload);
+       state.infoCard.push(action.payload);
       // state.latestId += 1;  
     },
     addActiveCard: (state, action) => {
       //push to notActive array from cards array
       state.notActiveCards = [...state.infoCard, action.payload];
       state.infoCard.pop();
-
       //push to cards array from input
       state.infoCard = [...state.infoCard, action.payload];
       state.notActiveCards.pop();

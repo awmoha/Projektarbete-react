@@ -15,7 +15,7 @@ export const AddCard = () => {
     bankName: "",
     id: "",
   };
-  const { cardList } = useSelector((state) => state.cardInfo);
+  const { infoCard } = useSelector((state) => state.cardInfo);
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
   const [values, setValues] = useState(cardData);
@@ -26,14 +26,14 @@ export const AddCard = () => {
     };
     setValues(nextCard);
   };
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (creditCard.cardList.length <= 3) {
+    if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
       // dispatch(addActiveCard(values)); om vi byter till detta så det blir rätt men den tar bara två kort
       setValues(cardData);
-      console.log(creditCard.infoCard);
     } else {
       alert("Max limit");
     }
@@ -59,6 +59,7 @@ export const AddCard = () => {
           <div>
             M/Y {values.cardMonth} / {values.cardYear}
           </div>
+          
         </form>
 
         <div className="credit-ccv"> CVG {values.ccv}</div>
@@ -133,6 +134,7 @@ export const AddCard = () => {
             <button className="submit" onClick={handleSubmit}>
               Submit
             </button>
+
             <Link to="/home">
               <button>Go Back To Home</button>
             </Link>

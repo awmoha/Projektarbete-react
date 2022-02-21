@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     dispatch(fetchRandomUser());
   }, [dispatch]);
-
   //jag skrev dispatch här i app.js för att när man add a new card
   // så ändras inte namnet på alla nya kort ??????
   const { infoCard } = useSelector((state) => state.cardInfo);
@@ -28,10 +27,10 @@ function App() {
             </Link>
           </div>
           <Switch>
-            {/* <Route path="/home" component={Home} />
-            <Route path="/addCard" component={AddCard} /> */}
-            <Route path="/home" render={(props) => <Home {...props} />} />
-            <Route path="/addCard" render={(props) => <AddCard {...props} />} />
+             <Route path="/home" component={Home} />
+            <Route path="/addCard" component={AddCard} /> 
+            {/* <Route path="/home" render={(props) => <Home {...props} />} />
+            <Route path="/addCard" render={(props) => <AddCard {...props} />} /> */}
             {/* {infoCard.map((user, i) => (
               <Route
                 path="/addcard"

@@ -10,6 +10,7 @@ function NotActiveCard({ creditList }) {
   return creditList.isActive === true ? (
     <div></div>
   ) : (
+    <div>
     <div className="card">
       <div className="card_orginal">
         <div className="credit-card__logo">{creditList.bankName}</div>
@@ -33,6 +34,7 @@ function NotActiveCard({ creditList }) {
           Delete
         </button>
       </div>
+    </div>
     </div>
   );
 }
