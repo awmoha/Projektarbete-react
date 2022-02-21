@@ -21,11 +21,11 @@ const initialState = {
   loading: false,
   error: false,
   cardList: [{
-    listName:"fefe"
+    isActive: true,
   }],
   infoCard: [
     {
-      id: 1,
+      id: null,
       cardName: "moha",
       cardNumber: "1111 1111 1111 1111",
       cardMonth: "22",
@@ -46,7 +46,7 @@ const cardSlice = createSlice({
   initialState,
   reducers: {
     addNewCard: (state, action) => {
-      state.infoCard = state.infoCard.concat(action.payload);
+      state.cardList = state.cardList.concat(action.payload);
       //alternativ 2 
       // state.infoCard.push(action.payload);
       // state.latestId += 1;  
@@ -61,7 +61,7 @@ const cardSlice = createSlice({
       state.notActiveCards.pop();
     },
     deletCard: (state, action) => {
-      state.infoCard = state.infoCard.filter(
+      state.cardList = state.cardList.filter(
         (card) => card.id !== action.payload
       );
     },

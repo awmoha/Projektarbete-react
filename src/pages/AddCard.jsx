@@ -15,7 +15,7 @@ export const AddCard = () => {
     bankName: "",
     id: "",
   };
-  const { infoCard } = useSelector((state) => state.cardInfo);
+  const { cardList } = useSelector((state) => state.cardInfo);
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
   const [values, setValues] = useState(cardData);
@@ -29,7 +29,7 @@ export const AddCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (creditCard.infoCard.length <= 3) {
+    if (creditCard.cardList.length <= 3) {
       dispatch(addNewCard(values));
       // dispatch(addActiveCard(values)); om vi byter till detta så det blir rätt men den tar bara två kort
       setValues(cardData);
@@ -81,6 +81,7 @@ export const AddCard = () => {
             <input
               type="text"
               name="cardName"
+              maxLength="20"
               value={values.cardName}
               onChange={handleChange}
               placeholder="Name"
