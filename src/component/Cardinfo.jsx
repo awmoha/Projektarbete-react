@@ -1,17 +1,19 @@
 import Card from "./Card";
 import { useSelector } from "react-redux";
 import NotActiveCard from "./NotActiveCard";
+import { useState } from "react";
 
 const CardInfo = () => {
   const { infoCard } = useSelector((state) => state.cardInfo);
-  const { cardList } = useSelector((state) => state.cardInfo);
-  // const { notActiveCards } = useSelector((state) => state.cardInfo);
-  // const [activeCardIndex, setActiveCardIndex] = useState(0);
-  // const [show, setShow] = useState(false);
-
+  const [pushCard, setPushCard] = useState(infoCard);
+  let changeActiv = () => {
+    infoCard.unshift(pushCard)
+     setPushCard(pushCard)
+  };
+  console.log(changeActiv);
   return (
     <div>
-      <div>
+      <div onClick={changeActiv}>
         <p> Activity Cards</p>
         {infoCard.map((card, i) => (
           <Card key={i} card={card} />
