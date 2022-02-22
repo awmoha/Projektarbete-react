@@ -23,5 +23,4 @@ function Card({ card}) {
     </div>
   );
 }
-
 export default Card;

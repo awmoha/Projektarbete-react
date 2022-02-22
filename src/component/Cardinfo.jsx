@@ -1,20 +1,29 @@
 import Card from "./Card";
 import { useSelector } from "react-redux";
-import NotActiveCard from "./NotActiveCard";
 import { useState } from "react";
 
 const CardInfo = () => {
   const { infoCard } = useSelector((state) => state.cardInfo);
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const [show, setShow] = useState(false);
+  const [isActive, setisActive] = useState();
+  let handleActiv = () => {
+    for (let i = 0; i < infoCard.length; i++)
+      if (infoCard[1] === infoCard[0]) {
+        infoCard.usshift([0]);
+      }
+
+    console.log(infoCard[1]);
+    // console.log(activeCardIndex);
+    // console.log(infoCard[1].isActive)
+  };
 
   return (
     <div>
-      <div>
+      <div onClick={handleActiv}>
         {infoCard.map((card, i) => (
-          <Card key={i} card={card}/>
+          <Card key={i} card={card} />
         ))}
       </div>
+
       {/* <div>
         <p> Cards</p>
         {cardList.map((creditList, i) => (
@@ -24,8 +33,6 @@ const CardInfo = () => {
     </div>
   );
 };
-
 export default CardInfo;
 
-   
-// e.stopPropagation();    ett sätt kolla på det 
+// e.stopPropagation();    ett sätt kolla på det

@@ -18,7 +18,7 @@ const initialState = {
       cardYear: "22",
       bankName: "Visa",
       status: null,
-      isActive: true,
+      isActive: false,
     },
   ],
   notActiveCards: [

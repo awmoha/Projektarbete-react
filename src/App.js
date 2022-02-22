@@ -27,16 +27,11 @@ function App() {
             </Link>
           </div>
           <Switch>
-             <Route path="/home" component={Home} />
+            <Route path="/home" component={Home} />
             {/* <Route path="/addCard" component={AddCard} />  */}
-            {/* <Route path="/home" render={(props) => <Home {...props} />} />
-            <Route path="/addCard" render={(props) => <AddCard {...props} />} /> */}
-             {infoCard.map((card, i) => (
-              <Route
-                path="/addcard"
-                render={() => <AddCard card={card} />}
-              />
-            ))} 
+            {infoCard.map((card, i) => (
+              <Route path="/addcard" render={() => <AddCard card={card} />} />
+            ))}
           </Switch>
         </Router>
       </header>

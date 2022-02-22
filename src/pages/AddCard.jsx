@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
 import { fetchRandomAddCard } from "../redux/cardSlice";
 //ett alternativ att skapa en till samma Api och fixa här kolla med Brandon
-export const AddCard = ({card}) => {
+export const AddCard = ({ card }) => {
   const cardData = {
     cardName: `${card.cardName}`,
     cardNumber: "XXXX XXXX XXXX XXXX",
@@ -26,7 +26,6 @@ export const AddCard = ({card}) => {
     };
     setValues(nextCard);
   };
- 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +37,7 @@ export const AddCard = ({card}) => {
       alert("Max limit");
     }
   };
+  console.log(handleChange);
 
   return (
     <div className=" card">
@@ -59,7 +59,6 @@ export const AddCard = ({card}) => {
           <div>
             M/Y {values.cardMonth} / {values.cardYear}
           </div>
-          
         </form>
 
         <div className="credit-ccv"> CVG {values.ccv}</div>
@@ -86,8 +85,8 @@ export const AddCard = ({card}) => {
               value={values.cardName}
               onChange={handleChange}
               placeholder="Name"
-              disabled = "disabled"
-            className="input_name"
+              disabled="disabled"
+              className="input_name"
             />
           </label>
           <label>
