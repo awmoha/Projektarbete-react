@@ -44,7 +44,9 @@ input {
   border: rgb(4, 5, 3) 2px solid;
   border-radius: 0.42em;
 }
-
+.input_name{
+  color: white;
+}
 select {
   margin: 20px 70px 70px 70px ;
   font-family: "Courier New", Courier, monospace;

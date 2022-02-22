@@ -28,15 +28,15 @@ function App() {
           </div>
           <Switch>
              <Route path="/home" component={Home} />
-            <Route path="/addCard" component={AddCard} /> 
+            {/* <Route path="/addCard" component={AddCard} />  */}
             {/* <Route path="/home" render={(props) => <Home {...props} />} />
             <Route path="/addCard" render={(props) => <AddCard {...props} />} /> */}
-            {/* {infoCard.map((user, i) => (
+             {infoCard.map((card, i) => (
               <Route
                 path="/addcard"
-                render={() => <AddCard user={user} />}
+                render={() => <AddCard card={card} />}
               />
-            ))} */}
+            ))} 
           </Switch>
         </Router>
       </header>

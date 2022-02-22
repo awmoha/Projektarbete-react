@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
 import { fetchRandomAddCard } from "../redux/cardSlice";
 //ett alternativ att skapa en till samma Api och fixa här kolla med Brandon
-export const AddCard = () => {
+export const AddCard = ({card}) => {
   const cardData = {
-    cardName: ``,
+    cardName: `${card.cardName}`,
     cardNumber: "XXXX XXXX XXXX XXXX",
     cardMonth: "",
     cardYear: "",
@@ -86,6 +86,8 @@ export const AddCard = () => {
               value={values.cardName}
               onChange={handleChange}
               placeholder="Name"
+              disabled = "disabled"
+            className="input_name"
             />
           </label>
           <label>
