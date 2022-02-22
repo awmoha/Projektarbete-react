@@ -33,7 +33,7 @@ function App() {
               <Route
                 path="/addcard"
                 key={i}
-                render={() => <AddCard  card={card} />}
+                render={() => <AddCard card={card} />}
               />
             ))}
           </Switch>

@@ -17,7 +17,7 @@ export const AddCard = ({ card }) => {
 
   const { infoCard } = useSelector((state) => state.cardInfo);
   const { notActiveCards } = useSelector((state) => state.cardInfo);
-  //om jag skapar två array så kan jag lägga den i rad 36 istället för infoCard och byta 3 till 2 och dispatch blir till en ny state 
+  //om jag skapar två array så kan jag lägga den i rad 36 istället för infoCard och byta 3 till 2 och dispatch blir till en ny state
 
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export const AddCard = ({ card }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (creditCard.notActiveCards.length <= 3) {
+    if (creditCard.notActiveCards.length <= 2) {
       dispatch(addActiveCard(values));
       // dispatch(addActiveCard(values));
       setValues(cardData);
@@ -130,6 +130,7 @@ export const AddCard = ({ card }) => {
           </label>
           <label htmlFor="bankName">Vendor</label>
           <select name="bankName" onChange={handleChange}>
+            <option hidden="hidden">Choose a Vender</option>
             <option value="American express">American express</option>
             <option value="visa">Visa</option>
             <option value="mastercard">Mastercard</option>
