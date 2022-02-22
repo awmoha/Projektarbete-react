@@ -21,11 +21,7 @@ const initialState = {
       isActive: false,
     },
   ],
-  notActiveCards: [
-    {
-      isUsed: false,
-    },
-  ],
+  notActiveCards: [],
 };
 const cardSlice = createSlice({
   name: "card",
@@ -34,19 +30,16 @@ const cardSlice = createSlice({
     addNewCard: (state, action) => {
       //state.infoCard = state.infoCard.concat(action.payload);
       //alternativ 2
-      state.infoCard.unshift(action.payload);
+      state.infoCard.push(action.payload);
       // state.latestId += 1;
     },
-    // addActiveCard: (state, action) => {
-    //   //push to notActive array from cards array
-    //   state.notActiveCards = [...state.infoCard, action.payload];
-    //   state.infoCard.pop();
-    //   //push to cards array from input
-    //   state.infoCard = [...state.infoCard, action.payload];
-    //   state.notActiveCards.pop();
-    // },
+
+    addActiveCard: (state, action) => {
+     //push to notActive array from cards array
+      state.notActiveCards.push(action.payload);
+    },
     deletCard: (state, action) => {
-      state.cardList = state.cardList.filter(
+      state.notActiveCards = state.notActiveCards.filter(
         (card) => card.id !== action.payload
       );
     },

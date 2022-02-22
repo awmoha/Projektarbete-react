@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
-import { fetchRandomAddCard } from "../redux/cardSlice";
 //ett alternativ att skapa en till samma Api och fixa här kolla med Brandon
 export const AddCard = ({ card }) => {
   const cardData = {
@@ -15,7 +14,11 @@ export const AddCard = ({ card }) => {
     bankName: "",
     id: "",
   };
+
   const { infoCard } = useSelector((state) => state.cardInfo);
+  const { notActiveCards } = useSelector((state) => state.cardInfo);
+  //om jag skapar två array så kan jag lägga den i rad 36 istället för infoCard och byta 3 till 2 och dispatch blir till en ny state 
+
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
   const [values, setValues] = useState(cardData);
@@ -29,15 +32,15 @@ export const AddCard = ({ card }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (creditCard.infoCard.length <= 3) {
-      dispatch(addNewCard(values));
-      // dispatch(addActiveCard(values)); om vi byter till detta så det blir rätt men den tar bara två kort
+    if (creditCard.notActiveCards.length <= 3) {
+      dispatch(addActiveCard(values));
+      // dispatch(addActiveCard(values));
       setValues(cardData);
     } else {
       alert("Max limit");
     }
   };
-  console.log(handleChange);
+  console.log(creditCard);
 
   return (
     <div className=" card">
