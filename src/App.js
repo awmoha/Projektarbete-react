@@ -30,7 +30,11 @@ function App() {
             <Route path="/home" component={Home} />
             {/* <Route path="/addCard" component={AddCard} />  */}
             {infoCard.map((card, i) => (
-              <Route path="/addcard" render={() => <AddCard card={card} />} />
+              <Route
+                path="/addcard"
+                key={i}
+                render={() => <AddCard  card={card} />}
+              />
             ))}
           </Switch>
         </Router>

@@ -40,7 +40,7 @@ export const AddCard = ({ card }) => {
       alert("Max limit");
     }
   };
-  console.log(creditCard);
+  //console.log(creditCard);
 
   return (
     <div className=" card">
