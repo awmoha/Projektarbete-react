@@ -10,7 +10,7 @@ body {
 button {
   padding: 0.55em 1.5em;
   border: 0.1em solid #0c0b0b;
-  margin: 0 0.3em 0.3em 0;
+  margin: 0em 0.3em 0.3em 0em;
   border-radius: 0.12em;
   font-family: "Times New Roman", Times, serif;
   color: #1a1717;
@@ -44,17 +44,17 @@ input {
   border: rgb(4, 5, 3) 2px solid;
   border-radius: 0.42em;
 }
-.input_name{
+.input_name {
   color: white;
 }
 select {
-  margin: 20px 70px 70px 70px ;
+  margin: 20px 70px 70px 70px;
   font-family: "Courier New", Courier, monospace;
 }
 
-p{
+p {
   font-family: "Times New Roman", Times, serif;
-margin-top: 90px;
+  margin-top: 90px;
 }
 .card {
   background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
@@ -88,6 +88,9 @@ margin-top: 90px;
   -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+.credit-card__logo {
+  font-family: "Courier New", Courier, monospace;
+}
 .credit-card__number {
   display: block;
   width: 100%;
@@ -96,6 +99,7 @@ margin-top: 90px;
   letter-spacing: 2px;
   color: #fff;
   text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .home__div {
   display: grid;
@@ -115,6 +119,16 @@ margin-top: 90px;
 }
 .chip {
   display: grid;
-  justify-self:center;
+  justify-self: center;
   width: 30px;
+}
+.credit-ccv {
+  font-family: "Courier New", Courier, monospace;
+  display: grid;
+  margin: -15px 0px 0px 8px;
+  justify-items: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 3px;
 }

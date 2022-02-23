@@ -13,10 +13,11 @@ const initialState = {
     {
       id: "1",
       cardName: "Loading",
-      cardNumber: "1111 1111 1111 1111",
+      cardNumber: "2565 5269 0981 0271",
       cardMonth: "22",
       cardYear: "22",
       bankName: "Visa",
+      cvv:"098",
       status: null,
       isActive: false,
     },

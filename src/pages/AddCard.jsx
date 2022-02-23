@@ -10,7 +10,7 @@ export const AddCard = ({ card }) => {
     cardNumber: "XXXX XXXX XXXX XXXX",
     cardMonth: "",
     cardYear: "",
-    ccv: "",
+    cvv: "",
     bankName: "",
   };
   const { infoCard } = useSelector((state) => state.cardInfo);
@@ -49,13 +49,13 @@ export const AddCard = ({ card }) => {
         />
         <div>CARDHOLDER'S NAME</div>
         {<div value={values.cardName}>{values.cardName}</div>}
-        <form className="credit-card__VALID">
+        <form className="credit-card__info_label">
           <div>
             M/Y {values.cardMonth} / {values.cardYear}
           </div>
         </form>
 
-        <div className="credit-ccv"> CVG {values.ccv}</div>
+        <div className="credit-ccv"> CVV {values.cvv}</div>
       </div>
       {/* Credit card form */}
       <div>
@@ -70,6 +70,7 @@ export const AddCard = ({ card }) => {
               placeholder="Enter Your Id"
               disabled="disabled"
               className="input_name"
+              
             />
           </label>
           <label>
@@ -91,6 +92,7 @@ export const AddCard = ({ card }) => {
               maxLength="16"
               onChange={handleChange}
               placeholder="XXXX XXXX XXXX XXXX"
+              required
             />
           </label>
           <label>
@@ -114,20 +116,23 @@ export const AddCard = ({ card }) => {
           <label>
             <input
               type="text"
-              name="ccv"
+              name="cvv"
               maxLength="3"
               onChange={handleChange}
-              placeholder="CCV"
+              placeholder="CVV"
             />
           </label>
           <label htmlFor="bankName">Vendor</label>
           <select name="bankName" onChange={handleChange}>
             <option hidden="hidden">Choose a Vender</option>
             <option value="American express">American express</option>
-            <option value="visa">Visa</option>
-            <option value="mastercard">Mastercard</option>
+            <option value="Visa">Visa</option>
+            <option value="Mastercard">Mastercard</option>
+            <option value="Moha AB">Moha AB</option>
+            <option value="Anonymous">Anonymous</option>
+
           </select>
-          <div>
+          <div style={{marginTop:"20px"}}>
             <button className="submit" onClick={handleSubmit}>
               Submit
             </button>
