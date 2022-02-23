@@ -33,15 +33,15 @@ const cardSlice = createSlice({
     },
 
     deleteCard: (state, { payload }) => {
-      let filteredcards = state.infoCard.filter((card) => card.id !== payload);
-      return { ...state, infoCard: filteredcards };
+      let deleteCards = state.infoCard.filter((card) => card.id !== payload);
+      return { ...state, infoCard: deleteCards };
     },
     setActive: (state, { payload }) => {
-      let filteredcards = state.infoCard.filter(
+      let setActiveCards = state.infoCard.filter(
         (card) => card.id !== payload.id
       );
-      filteredcards.splice(0, 0, payload);
-      return { ...state, infoCard: filteredcards };
+      setActiveCards.splice(0, 0, payload);
+      return { ...state, infoCard: setActiveCards };
     },
   },
   extraReducers: {

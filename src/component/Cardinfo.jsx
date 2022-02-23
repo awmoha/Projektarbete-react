@@ -20,13 +20,14 @@ const CardInfo = () => {
         <div>
           {infoCard.slice(1, 4).map((card, i) => {
             return (
-              <div onClick={() => dispatch(setActive(card))}>
+              <div >
                 <Card key={i} card={card} />
-             <div>
-             <button onClick={() => dispatch(deleteCard(card.id))}>
-                  Remove
-                </button>
-               </div>
+                <div>
+                <button onClick={() => dispatch(setActive(card))}>Set Activity</button>
+                  <button onClick={() => dispatch(deleteCard(card.id))}>
+                    Remove
+                  </button>
+                </div>
               </div>
             );
           })}
