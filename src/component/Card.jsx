@@ -27,7 +27,7 @@ function Card({ card }) {
             <div className="credit-card__info_label">
               M/Y {card.cardMonth} / {card.cardYear}
             </div>
-            <span className="credit-ccv">CVV {card.cvv}</span>
+            <em className="credit-ccv">CVV {card.cvv}</em>
           </footer>
         </div>
       </div>

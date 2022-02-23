@@ -56,7 +56,7 @@ p {
   margin-top: 90px;
 }
 .card_orginal {
-  background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
+  background: url(https://archive.org/download/anonymous-logo-wallpaper-4/anonymous-logo-wallpaper-4.jpg)
     no-repeat center center;
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
@@ -89,7 +89,7 @@ main {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
 }
 footer {
-  background: linear-gradient(#285c28, #245324);
+  background: linear-gradient(#2c522c, #245324);
   height: 15px;
   margin: 70px 0px 10px 0px;
   padding: 0px 0px 0px 0px;
@@ -97,7 +97,7 @@ footer {
 .credit-card__info_label {
   display: grid;
   position: absolute;
-  margin: 2px 0px 0px 225px;
+  margin: 2px 0px 0px 220px;
   justify-items: right;
   font-size: 10px;
   text-transform: uppercase;
@@ -106,6 +106,7 @@ footer {
 }
 .credit-ccv {
   font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
   display: grid;
   margin: 2px 0px 0px 8px;
   justify-items: left;
