@@ -20,10 +20,16 @@ const CardInfo = () => {
         <div>
           {infoCard.slice(1, 4).map((card, i) => {
             return (
-              <div >
+               //<div
+               //  onClick={() => dispatch(setActive(card))}
+               //  onDoubleClick={() => dispatch(deleteCard(card.id))}
+              // >
+              <div>
                 <Card key={i} card={card} />
                 <div>
-                <button onClick={() => dispatch(setActive(card))}>Set Activity</button>
+                  <button onClick={() => dispatch(setActive(card))}>
+                    Set Activity
+                  </button>
                   <button onClick={() => dispatch(deleteCard(card.id))}>
                     Remove
                   </button>

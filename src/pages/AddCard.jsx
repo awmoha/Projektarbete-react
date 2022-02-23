@@ -1,18 +1,17 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
-import { addNewCard, addActiveCard } from "../redux/cardSlice";
-import Home from "./Home";
+import { useState } from "react";
+import { addNewCard } from "../redux/cardSlice";
 export const AddCard = ({ card }) => {
   const cardData = {
+    id: Date.now(),
     cardName: `${card.cardName}`,
     cardNumber: "XXXX XXXX XXXX XXXX",
     cardMonth: "",
     cardYear: "",
     ccv: "",
     bankName: "",
-    id: Date.now(),
   };
   const { infoCard } = useSelector((state) => state.cardInfo);
   const creditCard = useSelector((state) => state.cardInfo);
@@ -29,7 +28,7 @@ export const AddCard = ({ card }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/home")
+    history.push("/home");
     if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
       setValues(cardData);
@@ -66,7 +65,6 @@ export const AddCard = ({ card }) => {
             <input
               type="text"
               name="id"
-              maxLength="4"
               value={values.id}
               onChange={handleChange}
               placeholder="Enter Your Id"
