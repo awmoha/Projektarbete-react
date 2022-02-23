@@ -1,44 +1,38 @@
 import Card from "./Card";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import NotActiveCard from "./NotActiveCard";
+import { deleteCard, setActive } from "../redux/cardSlice";
 const CardInfo = () => {
+  const dispatch = useDispatch();
   const { infoCard } = useSelector((state) => state.cardInfo);
-  const { notActiveCards } = useSelector((state) => state.cardInfo);
-  // let handleActiv = () => {
-  //   for (let i = 0; i < infoCard.length; i++)
-  //     for (let n = 0; n < notActiveCards.length; n++) console.log(infoCard);
-  //   console.log(notActiveCards);
-    // console.log(infoCard[1].isActive)
- // };
-  let handleActivTest = () => {
-    let newArray = infoCard.concat(notActiveCards); //concat samlas två array i en array
-    for (let i = 0; i < infoCard.length; i++)
-      for (let n = 0; n < notActiveCards.length; n++) 
-      if(newArray[1].isActive === true){
-        newArray.push(newArray[0])
-      
-    }
-    console.log(newArray);
-    // console.log(infoCard[1].isActive)
-  };
   return (
     <div>
       <div>
-        {infoCard.map((card, i) => (
-          <Card key={i} card={card} />
-        ))}
+        {infoCard.slice(0, 1).map((card, i) => {
+          return (
+            <div>
+              <Card key={i} card={card} />
+            </div>
+          );
+        })}
       </div>
 
-      <div onClick={handleActivTest}>
-        <p> InActive Cards</p>
-        {notActiveCards.map((creditList, i) => (
-          <NotActiveCard key={i} creditList={creditList} />
-        ))}
+      <div>
+        <div>
+          {infoCard.slice(1, 4).map((card, i) => {
+            return (
+              <div onClick={() => dispatch(setActive(card))}>
+                <Card key={i} card={card} />
+             <div>
+             <button onClick={() => dispatch(deleteCard(card.id))}>
+                  Remove
+                </button>
+               </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 };
 export default CardInfo;
-
-// e.stopPropagation();    ett sätt kolla på det
