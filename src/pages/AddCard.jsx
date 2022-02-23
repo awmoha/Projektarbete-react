@@ -49,14 +49,14 @@ export const AddCard = ({ card }) => {
         />
         <div>CARDHOLDER'S NAME</div>
         {<div value={values.cardName}>{values.cardName}</div>}
-        <form className="credit-card__info_label">
-          <div>
+        <footer>
+          <div className="credit-card__info_label">
             M/Y {values.cardMonth} / {values.cardYear}
           </div>
-        </form>
-
-        <div className="credit-ccv"> CVV {values.cvv}</div>
+          <div className="credit-ccv"> CVV {values.cvv}</div>
+        </footer>
       </div>
+
       {/* Credit card form */}
       <div>
         <form className="label_card" onSubmit={handleSubmit}>
@@ -70,7 +70,6 @@ export const AddCard = ({ card }) => {
               placeholder="Enter Your Id"
               disabled="disabled"
               className="input_name"
-              
             />
           </label>
           <label>
@@ -130,9 +129,8 @@ export const AddCard = ({ card }) => {
             <option value="Mastercard">Mastercard</option>
             <option value="Moha AB">Moha AB</option>
             <option value="Anonymous">Anonymous</option>
-
           </select>
-          <div style={{marginTop:"20px"}}>
+          <div style={{ marginTop: "20px" }}>
             <button className="submit" onClick={handleSubmit}>
               Submit
             </button>
