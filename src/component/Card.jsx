@@ -4,7 +4,7 @@ function Card({ card}) {
     <div>
       <div className="card">
         <div className="card_orginal">
-          <div>{card.id}</div>
+          {/* <div>{card.id}</div> */}
           <div className="credit-card__logo">{card.bankName}</div>
           <div className="credit-card__number">{card.cardNumber}</div>
           <img

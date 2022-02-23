@@ -133,9 +133,6 @@ export const AddCard = ({ card }) => {
               Submit
             </button>
             <Link to="/home">
-              <button onClick={handleSubmit}>Submit</button>
-            </Link>
-            <Link to="/home">
               <button>Go Back To Home</button>
             </Link>
           </div>
