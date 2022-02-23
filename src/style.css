@@ -10,7 +10,7 @@ body {
 button {
   padding: 0.55em 1.5em;
   border: 0.1em solid #0c0b0b;
-  margin: 0em 0.3em 0.3em 0em;
+  margin: 4em 0.3em 0.3em 0em;
   border-radius: 0.12em;
   font-family: "Times New Roman", Times, serif;
   color: #1a1717;
@@ -51,34 +51,26 @@ select {
   margin: 20px 70px 70px 70px;
   font-family: "Courier New", Courier, monospace;
 }
-
 p {
   font-family: "Times New Roman", Times, serif;
   margin-top: 90px;
 }
-.card {
+.card_orginal {
   background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
     no-repeat center center;
-  margin-top: 40px;
-  width: 320px;
-  height: 190px;
-  border-radius: 10px;
-  background-size: cover;
-  color: #fff;
-  display: grid;
-}
-.card_orginal {
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
-  margin-top: 0px;
+  margin-top: 40px;
   width: 320px;
   height: 190px;
   background-position: center;
   background-size: cover;
   font-size: 15px;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 .credit-card__logo {
+  position: relative;
+  margin-top: 6px;
   font-family: "Courier New", Courier, monospace;
 }
 .credit-card__number {
@@ -91,18 +83,16 @@ p {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.home__div {
-  display: grid;
-  margin-top: 20px;
-  justify-content: center;
-  font-family: "Fjalla One", sans-serif;
-  font-size: 35px;
+main {
+  position: absolute;
+  margin: 90px 0px 0px 90px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
 }
-
 footer {
-  background: linear-gradient(#285c28, #245324);  height: 15px;
-  margin: 0px 0px 10px 0px ;
-  padding: 0px 0px 0px 0px ;
+  background: linear-gradient(#285c28, #245324);
+  height: 15px;
+  margin: 70px 0px 10px 0px;
+  padding: 0px 0px 0px 0px;
 }
 .credit-card__info_label {
   display: grid;
@@ -124,15 +114,6 @@ footer {
   color: black;
   letter-spacing: 3px;
 }
-
-.chip {
-  display: grid;
-  justify-items: left;
-  width: 30px;
-  opacity: 0.7;
-  position: absolute;
-  margin: 90px 0px 0px 20px;
-}
 .wifi {
   display: grid;
   justify-items: left;
@@ -140,5 +121,13 @@ footer {
   font-size: 20px;
   color: darkgoldenrod;
   position: absolute;
-  margin: 65px 0px 0px 25px;
+  margin: 70px 0px 0px 25px;
+}
+.chip {
+  display: grid;
+  justify-items: left;
+  width: 30px;
+  opacity: 0.7;
+  position: absolute;
+  margin: 95px 0px 0px 20px;
 }
