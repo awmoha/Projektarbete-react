@@ -21,7 +21,6 @@ const initialState = {
       isActive: false,
     },
   ],
-  notActiveCards: [],
 };
 const cardSlice = createSlice({
   name: "card",
@@ -31,17 +30,18 @@ const cardSlice = createSlice({
       //state.infoCard = state.infoCard.concat(action.payload);
       //alternativ 2
       state.infoCard.push(action.payload);
-      // state.latestId += 1;
     },
 
-    addActiveCard: (state, action) => {
-     //push to notActive array from cards array
-      state.notActiveCards.push(action.payload);
+    deleteCard: (state, { payload }) => {
+      let filteredcards = state.infoCard.filter((card) => card.id !== payload);
+      return { ...state, infoCard: filteredcards };
     },
-    deletCard: (state, action) => {
-      state.notActiveCards = state.notActiveCards.filter(
-        (card) => card.id !== action.payload
+    setActive: (state, { payload }) => {
+      let filteredcards = state.infoCard.filter(
+        (card) => card.id !== payload.id
       );
+      filteredcards.splice(0, 0, payload);
+      return { ...state, infoCard: filteredcards };
     },
   },
   extraReducers: {
@@ -64,5 +64,5 @@ const cardSlice = createSlice({
     },
   },
 });
-export const { addNewCard, addActiveCard, deletCard } = cardSlice.actions;
+export const { addNewCard, deleteCard, setActive } = cardSlice.actions;
 export default cardSlice.reducer;

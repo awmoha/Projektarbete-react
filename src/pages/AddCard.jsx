@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
 //ett alternativ att skapa en till samma Api och fixa här kolla med Brandon
+
 export const AddCard = ({ card }) => {
   const cardData = {
     cardName: `${card.cardName}`,
@@ -12,13 +13,11 @@ export const AddCard = ({ card }) => {
     cardYear: "",
     ccv: "",
     bankName: "",
-    id: "",
+    id: Date.now(),
   };
-
   const { infoCard } = useSelector((state) => state.cardInfo);
   const { notActiveCards } = useSelector((state) => state.cardInfo);
   //om jag skapar två array så kan jag lägga den i rad 36 istället för infoCard och byta 3 till 2 och dispatch blir till en ny state
-
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
   const [values, setValues] = useState(cardData);
@@ -32,8 +31,8 @@ export const AddCard = ({ card }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (creditCard.notActiveCards.length <= 2) {
-      dispatch(addActiveCard(values));
+    if (creditCard.infoCard.length <= 3) {
+      dispatch(addNewCard(values));
       // dispatch(addActiveCard(values));
       setValues(cardData);
     } else {
@@ -41,7 +40,6 @@ export const AddCard = ({ card }) => {
     }
   };
   //console.log(creditCard);
-
   return (
     <div className=" card">
       <div className="card_orginal">
@@ -78,6 +76,8 @@ export const AddCard = ({ card }) => {
               value={values.id}
               onChange={handleChange}
               placeholder="Enter Your Id"
+              disabled="disabled"
+              className="input_name"
             />
           </label>
           <label>
@@ -139,7 +139,6 @@ export const AddCard = ({ card }) => {
             <button className="submit" onClick={handleSubmit}>
               Submit
             </button>
-
             <Link to="/home">
               <button>Go Back To Home</button>
             </Link>
