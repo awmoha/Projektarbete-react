@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addNewCard, addActiveCard } from "../redux/cardSlice";
-//ett alternativ att skapa en till samma Api och fixa här kolla med Brandon
-
+import Home from "./Home";
 export const AddCard = ({ card }) => {
   const cardData = {
     cardName: `${card.cardName}`,
@@ -16,10 +15,9 @@ export const AddCard = ({ card }) => {
     id: Date.now(),
   };
   const { infoCard } = useSelector((state) => state.cardInfo);
-  const { notActiveCards } = useSelector((state) => state.cardInfo);
-  //om jag skapar två array så kan jag lägga den i rad 36 istället för infoCard och byta 3 till 2 och dispatch blir till en ny state
   const creditCard = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
+  const history = useHistory();
   const [values, setValues] = useState(cardData);
   const handleChange = (e) => {
     const nextCard = {
@@ -33,13 +31,11 @@ export const AddCard = ({ card }) => {
     e.preventDefault();
     if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
-      // dispatch(addActiveCard(values));
       setValues(cardData);
     } else {
       alert("Max limit");
     }
   };
-  //console.log(creditCard);
   return (
     <div className=" card">
       <div className="card_orginal">
@@ -53,9 +49,6 @@ export const AddCard = ({ card }) => {
         />
         <div>CARDHOLDER'S NAME</div>
         {<div value={values.cardName}>{values.cardName}</div>}
-        {/* { <div className="credit-card__name" value={values.cardName}>
-            {values.cardName}
-          </div> } */}
         <form className="credit-card__VALID">
           <div>
             M/Y {values.cardMonth} / {values.cardYear}
@@ -139,6 +132,9 @@ export const AddCard = ({ card }) => {
             <button className="submit" onClick={handleSubmit}>
               Submit
             </button>
+            <Link to="/home">
+              <button onClick={handleSubmit}>Submit</button>
+            </Link>
             <Link to="/home">
               <button>Go Back To Home</button>
             </Link>
