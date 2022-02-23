@@ -29,6 +29,7 @@ export const AddCard = ({ card }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push("/home")
     if (creditCard.infoCard.length <= 3) {
       dispatch(addNewCard(values));
       setValues(cardData);

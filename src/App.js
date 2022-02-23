@@ -29,7 +29,7 @@ function App() {
               <Route
                 path="/addcard"
                 key={i}
-                render={(props) => <AddCard card={card} {...props} />}
+                render={() => <AddCard card={card}/>}
               />
             ))}
           </Switch>
