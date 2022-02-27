@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { addNewCard } from "../redux/cardSlice";
+import NumberFormat from "react-number-format";
 export const AddCard = ({ card }) => {
   const cardData = {
     id: Date.now(),
@@ -36,6 +37,7 @@ export const AddCard = ({ card }) => {
       alert("Max limit");
     }
   };
+
   return (
     <div>
       <div className="card_orginal">
@@ -87,38 +89,47 @@ export const AddCard = ({ card }) => {
             />
           </label>
           <label>
-            <input
+            <NumberFormat
+              format="#### #### #### ####"
+              mask="*"
               type="text"
               name="cardNumber"
-              maxLength="16"
+              // maxLength="16"
               onChange={handleChange}
               placeholder="XXXX XXXX XXXX XXXX"
               required
             />
           </label>
           <label>
-            <input
+            <NumberFormat
+              format="##"
+              mask="_"
               type="text"
               name="cardYear"
-              maxLength="2"
+              required
+              //maxLength="2"
               onChange={handleChange}
               placeholder="Year"
             />
           </label>
           <label>
-            <input
+            <NumberFormat
+              format="##"
+              mask="_"
               type="text"
               name="cardMonth"
-              maxLength="2"
+              //maxLength="2"
               onChange={handleChange}
               placeholder=" Month"
             />
           </label>
           <label>
-            <input
+            <NumberFormat
+              format="###"
+              mask="_"
               type="text"
               name="cvv"
-              maxLength="3"
+              //maxLength="3"
               onChange={handleChange}
               placeholder="CVV"
             />
@@ -130,7 +141,7 @@ export const AddCard = ({ card }) => {
             <option value="Visa">Visa</option>
             <option value="Mastercard">Mastercard</option>
             <option value="Moha AB">Moha AB</option>
-            <option value="Anonymous">Anonymous</option>
+            <option value="Anonymous">Anonymous Group</option>
           </select>
           <div style={{ marginTop: "20px" }}>
             <button className="submit" onClick={handleSubmit}>
