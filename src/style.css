@@ -56,7 +56,7 @@ p {
   margin-top: 90px;
 }
 .card_orginal {
-  background: url(https://archive.org/download/anonymous-logo-wallpaper-4/anonymous-logo-wallpaper-4.jpg)
+  background: url(https://i.ytimg.com/vi/ATWHGBRppe8/maxresdefault.jpg)
     no-repeat center center;
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
@@ -68,6 +68,7 @@ p {
   font-size: 15px;
   border-radius: 14px;
 }
+
 .credit-card__logo {
   position: relative;
   margin-top: 6px;
@@ -89,7 +90,14 @@ main {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
 }
 footer {
-  background: linear-gradient(#2c522c, #245324);
+  background: repeating-linear-gradient(
+    45deg,
+    #1a5d17,
+    #135d26 5px,
+    #f9f9f9 5px,
+    #f9f9f9 10px
+  );
+  opacity: 0.7;
   height: 15px;
   margin: 70px 0px 10px 0px;
   padding: 0px 0px 0px 0px;
@@ -103,12 +111,15 @@ footer {
   text-transform: uppercase;
   color: black;
   letter-spacing: 4px;
+  background-color: #f9f9f9;
 }
 .credit-ccv {
+  background-color: #f9f9f9;
+
   font-family: "Courier New", Courier, monospace;
   font-weight: 800;
   display: grid;
-  margin: 2px 0px 0px 8px;
+  margin: 2px 245px 0px 8px;
   justify-items: left;
   font-size: 10px;
   text-transform: uppercase;
