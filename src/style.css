@@ -58,6 +58,7 @@ p {
 .card_orginal {
   background: url(https://i.ytimg.com/vi/ATWHGBRppe8/maxresdefault.jpg)
     no-repeat center center;
+    
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
   margin-top: 40px;
@@ -92,10 +93,10 @@ main {
 footer {
   background: repeating-linear-gradient(
     45deg,
-    #1a5d17,
-    #135d26 5px,
+    #144111,
+    #29793d 5px,
     #f9f9f9 5px,
-    #f9f9f9 10px
+    #f9f9f9 120px
   );
   opacity: 0.7;
   height: 15px;
