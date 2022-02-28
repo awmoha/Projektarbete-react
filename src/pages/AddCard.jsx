@@ -25,7 +25,7 @@ export const AddCard = ({ card }) => {
       [e.target.name]: e.target.value,
     };
     if (nextCard.cardNumber.length !== 19) {
-      alert("You must choose your 16 number");
+      alert("You must choose your 16 number. Please..");
     } else {
       setValues(nextCard);
     }
@@ -112,7 +112,7 @@ export const AddCard = ({ card }) => {
               name="cardYear"
               //maxLength="2"
               onChange={handleChange}
-              placeholder="Year"
+              placeholder="Year (XY)"
               required
             />
           </label>
@@ -124,7 +124,7 @@ export const AddCard = ({ card }) => {
               name="cardMonth"
               //maxLength="2"
               onChange={handleChange}
-              placeholder=" Month"
+              placeholder=" Month (XY)"
               required
             />
           </label>
@@ -136,7 +136,7 @@ export const AddCard = ({ card }) => {
               name="cvv"
               //maxLength="3"
               onChange={handleChange}
-              placeholder="CVV"
+              placeholder="CVV (XXX)"
               required
             />
           </label>

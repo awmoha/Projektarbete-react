@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCard, setActive } from "../redux/cardSlice";
-import { TiDelete } from 'react-icons/ti';
+import { TiDelete } from "react-icons/ti";
 
 const CardInfo = () => {
   const dispatch = useDispatch();
@@ -12,8 +12,8 @@ const CardInfo = () => {
         <h4>Activ Card</h4>
         {infoCard.slice(0, 1).map((card, i) => {
           return (
-            <div>
-              <Card key={i} card={card} />
+            <div key={i}>
+              <Card card={card} />
             </div>
           );
         })}
@@ -23,9 +23,9 @@ const CardInfo = () => {
         <div>
           {infoCard.slice(1, 4).map((card, i) => {
             return (
-              <div>
+              <div key={i}>
                 <div onClick={() => dispatch(setActive(card))}>
-                  <Card key={i} card={card} />
+                  <Card card={card} />
                 </div>
                 <div className="delete_btn">
                   {/* <button onClick={() => dispatch(setActive(card))}>
@@ -34,7 +34,7 @@ const CardInfo = () => {
                   {/* <button onClick={() => dispatch(deleteCard(card.id))}>
                     Remove
                   </button> */}
-                  <TiDelete onClick={() => dispatch(deleteCard(card.id))}/>
+                  <TiDelete onClick={() => dispatch(deleteCard(card.id))} />
                 </div>
               </div>
             );
