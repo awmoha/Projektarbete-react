@@ -9,7 +9,7 @@ const CardInfo = () => {
   return (
     <div>
       <div>
-        <h4>Activ Card</h4>
+        <h4 className="activ_card">Activ Card</h4>
         {infoCard.slice(0, 1).map((card, i) => {
           return (
             <div key={i}>

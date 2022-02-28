@@ -5,6 +5,8 @@ import AddCard from "./pages/AddCard";
 import { fetchRandomUser } from "./redux/cardSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BsBank2 } from "react-icons/bs";
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,9 +31,10 @@ function App() {
               <Route
                 path="/addcard"
                 key={i}
-                render={() => <AddCard card={card}/>}
+                render={() => <AddCard card={card} />}
               />
             ))}
+            <div className="img"></div>
           </Switch>
         </Router>
       </header>
