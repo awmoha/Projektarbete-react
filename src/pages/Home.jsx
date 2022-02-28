@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CardInfo from "../component/Cardinfo";
+
 function Home() {
   return (
     <div>

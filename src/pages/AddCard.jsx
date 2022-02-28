@@ -67,6 +67,7 @@ export const AddCard = ({ card }) => {
           <h2>Add Card</h2>
           <label>
             <input
+            
               type="text"
               name="id"
               value={values.id}
@@ -141,7 +142,7 @@ export const AddCard = ({ card }) => {
             <option value="Visa">Visa</option>
             <option value="Mastercard">Mastercard</option>
             <option value="Moha AB">Moha AB</option>
-            <option value="Anonymous">Anonymous Group</option>
+            <option value="Anonymous Group">Anonymous Group</option>
           </select>
           <div style={{ marginTop: "20px" }}>
             <button className="submit" onClick={handleSubmit}>
