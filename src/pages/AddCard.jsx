@@ -8,7 +8,7 @@ export const AddCard = ({ card }) => {
   const cardData = {
     id: Date.now(),
     cardName: `${card.cardName}`,
-    cardNumber: "XXXX XXXX XXXX XXXX",
+    cardNumber: "XXXX XXXX XXXX XXXX ",
     cardMonth: "",
     cardYear: "",
     cvv: "",
@@ -24,8 +24,11 @@ export const AddCard = ({ card }) => {
       ...values,
       [e.target.name]: e.target.value,
     };
-    setValues(nextCard);
-    console.log(nextCard.cardNumber.length);
+    if (nextCard.cardNumber.length !== 19) {
+      alert("You must choose your 16 number");
+    } else {
+      setValues(nextCard);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -65,7 +68,7 @@ export const AddCard = ({ card }) => {
       {/* Credit card form */}
       <div>
         <form className="label_card" onSubmit={handleSubmit}>
-          <h2>Add Card</h2>
+          <h2 style={{ fontFamily: "monospace" }}> Add a New Card</h2>
           <label>
             <input
               type="text"
@@ -138,7 +141,12 @@ export const AddCard = ({ card }) => {
             />
           </label>
           <label htmlFor="bankName">Vendor</label>
-          <select name="bankName" onChange={handleChange} required>
+          <select
+            name="bankName"
+            value="bankName"
+            onChange={handleChange}
+            required
+          >
             <option hidden="hidden">Choose a Vender</option>
             <option value="American express">American express</option>
             <option value="Visa">Visa</option>
