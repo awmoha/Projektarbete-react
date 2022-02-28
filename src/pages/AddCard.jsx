@@ -25,8 +25,7 @@ export const AddCard = ({ card }) => {
       [e.target.name]: e.target.value,
     };
     setValues(nextCard);
-
-    console.log(nextCard.cardMonth.length);
+    console.log(nextCard.cardNumber.length);
   };
 
   const handleSubmit = (e) => {
@@ -138,10 +137,10 @@ export const AddCard = ({ card }) => {
               required
             />
           </label>
-          <label htmlFor="bankName" >Vendor</label>
-          <select name="bankName"  onChange={handleChange} required>
-            <option hidden="hidden" >Choose a Vender</ option>
-            <option value="American express" >American express</option>
+          <label htmlFor="bankName">Vendor</label>
+          <select name="bankName" onChange={handleChange} required>
+            <option hidden="hidden">Choose a Vender</option>
+            <option value="American express">American express</option>
             <option value="Visa">Visa</option>
             <option value="Mastercard">Mastercard</option>
             <option value="Moha AB">Moha AB</option>

@@ -50,6 +50,7 @@ input {
 select {
   margin: 20px 70px 70px 70px;
   font-family: "Courier New", Courier, monospace;
+  border-radius: 0.42em;
 }
 p {
   font-family: "Times New Roman", Times, serif;
@@ -58,7 +59,7 @@ p {
 .card_orginal {
   background: url(https://i.ytimg.com/vi/ATWHGBRppe8/maxresdefault.jpg)
     no-repeat center center;
-    
+
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
   margin-top: 40px;
