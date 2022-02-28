@@ -145,3 +145,12 @@ footer {
   position: absolute;
   margin: 95px 0px 0px 20px;
 }
+.delete_btn {
+  margin: 20px 150px 20px 150px;
+}
+.delete_btn:hover {
+  font-size: 20px;
+}
+.delete_btn:active {
+  color: red;
+}
