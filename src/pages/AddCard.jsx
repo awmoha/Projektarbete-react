@@ -25,6 +25,8 @@ export const AddCard = ({ card }) => {
       [e.target.name]: e.target.value,
     };
     setValues(nextCard);
+
+    console.log(nextCard.cardMonth.length);
   };
 
   const handleSubmit = (e) => {
@@ -67,7 +69,6 @@ export const AddCard = ({ card }) => {
           <h2>Add Card</h2>
           <label>
             <input
-            
               type="text"
               name="id"
               value={values.id}
@@ -107,10 +108,10 @@ export const AddCard = ({ card }) => {
               mask="_"
               type="text"
               name="cardYear"
-              required
               //maxLength="2"
               onChange={handleChange}
               placeholder="Year"
+              required
             />
           </label>
           <label>
@@ -122,6 +123,7 @@ export const AddCard = ({ card }) => {
               //maxLength="2"
               onChange={handleChange}
               placeholder=" Month"
+              required
             />
           </label>
           <label>
@@ -133,19 +135,20 @@ export const AddCard = ({ card }) => {
               //maxLength="3"
               onChange={handleChange}
               placeholder="CVV"
+              required
             />
           </label>
-          <label htmlFor="bankName">Vendor</label>
-          <select name="bankName" onChange={handleChange}>
-            <option hidden="hidden">Choose a Vender</option>
-            <option value="American express">American express</option>
+          <label htmlFor="bankName" >Vendor</label>
+          <select name="bankName"  onChange={handleChange} required>
+            <option hidden="hidden" >Choose a Vender</ option>
+            <option value="American express" >American express</option>
             <option value="Visa">Visa</option>
             <option value="Mastercard">Mastercard</option>
             <option value="Moha AB">Moha AB</option>
             <option value="Anonymous Group">Anonymous Group</option>
           </select>
           <div style={{ marginTop: "20px" }}>
-            <button className="submit" onClick={handleSubmit}>
+            <button className="submit" onClick={handleChange}>
               Submit
             </button>
             <Link to="/home">
