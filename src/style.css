@@ -147,9 +147,11 @@ footer {
 }
 .delete_btn {
   margin: 20px 150px 20px 150px;
+  font-size: 25px;
+
 }
 .delete_btn:hover {
-  font-size: 20px;
+  font-size: 30px;
 }
 .delete_btn:active {
   color: red;
