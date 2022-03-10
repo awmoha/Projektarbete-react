@@ -154,7 +154,7 @@ export const AddCard = ({ card }) => {
             <option value="Moha AB">Moha AB</option>
             <option value="Anonymous Group">Anonymous Group</option>
           </select>
-          <div style={{ marginTop: "20px" }}>
+          <div style={{ marginTop: "0px" }}>
             <button className="submit" onClick={handleChange}>
               Submit
             </button>

@@ -57,8 +57,16 @@ p {
   margin-top: 90px;
 }
 .card_orginal {
-  background: url(https://i.ytimg.com/vi/ATWHGBRppe8/maxresdefault.jpg)
-    no-repeat center center;
+  background: url() no-repeat center center;
+  background-image: url("https://image.ibb.co/bVnMrc/g3095.png"),
+    linear-gradient(
+      to right bottom,
+      #4d55b9,
+      #4f56be,
+      #2b35c7,
+      #393e85,
+      #262d8f
+    ); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
 
   display: grid;
   box-shadow: 1px 1px #aaa3a3;
@@ -72,8 +80,7 @@ p {
 }
 .activ_card {
   color: #309529;
-  font-family: "Courier New"	
-  ;
+  font-family: "Courier New";
 }
 .credit-card__logo {
   position: relative;
@@ -166,16 +173,3 @@ footer {
   gap: 150px;
   font-size: 90px;
 } */
-.img {
-  background: url(http://4.bp.blogspot.com/_JXyDn5pcCqE/SH1mZjIyh_I/AAAAAAAAA9o/ClCzTHEKqHc/s400/free%20bank.jpg)
-    no-repeat center center;
-  display: grid;
-  box-shadow: 1px 1px #aaa3a3;
-  margin-top: 90px;
-  width: 620px;
-  height: 290px;
-  background-position: center;
-  background-size: cover;
-  font-size: 15px;
-  border-radius: 14px;
-}
